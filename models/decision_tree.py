@@ -1,8 +1,8 @@
 from sklearn.pipeline import Pipeline
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
-random_forest = Pipeline([
+decision_tree = Pipeline([
     ('vect', CountVectorizer()),
-    ('clf', RandomForestClassifier()),
+    ('clf', DecisionTreeClassifier()),
 ])
