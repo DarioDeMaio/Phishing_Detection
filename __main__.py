@@ -15,7 +15,7 @@ df['label'] = df['label'].map({'Safe Email': 0, 'Phishing Email': 1})
 X = df['email'].to_numpy()
 y = df['label'].to_numpy()
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # print('Random Forest')
 # random_forest.fit(X_train, y_train)
