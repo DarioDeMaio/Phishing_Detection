@@ -27,5 +27,5 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # print(classification_report(y_test, y_pred))
 
 print('Bert')
-y_pred = bert_classifier.predict(X_train)
+y_pred = bert_classifier.predict(X_test)
 print(classification_report(y_test, y_pred))
