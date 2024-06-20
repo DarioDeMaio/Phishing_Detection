@@ -13,6 +13,12 @@ class BertClassifier(BaseEstimator):
         self.model = AutoModelForSequenceClassification.from_pretrained('ealvaradob/bert-finetuned-phishing', num_labels=2)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
+        
+        for param in self.model.base_model.parameters():
+            param.requires_grad = False
+
+        for param in self.model.classifier.parameters():
+            param.requires_grad = True
 
     def fit(self, X, y):
         train_encodings = self.tokenizer(list(X), truncation=True, padding=True, max_length=512, return_tensors='pt')
