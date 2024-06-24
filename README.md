@@ -32,3 +32,7 @@ Per eseguire questo progetto, è necessario installare le dipendenze elencate ne
 
 ```sh
 pip install -r requirements.txt
+pip install torch
+```
+
+Inoltre occore installare la libreria lms-index per utilizzare il modello Llama, di cui è predisposta la pipeline di utilizzo nel file jupiter presente nel progetto.
